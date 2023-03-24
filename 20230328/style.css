@@ -1,0 +1,298 @@
+body, p {
+  margin: initial;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: initial;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+button {
+  background: none;
+  border: 0;
+  font-style: inherit;
+}
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.l-wrapper {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-purple {
+  background-color: #673399;
+  color: #fff;
+}
+
+.section-pink {
+  background-color: seashell;
+  color: salmon;
+}
+
+
+.section-header {
+  margin-bottom: 100px;
+}
+
+.section-contents.sl {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* title */
+.title {
+  display: flex;
+  align-items: center;
+}
+
+
+.title-heading {
+  flex-basis: 26%;
+  flex-shrink: 0;
+  font-size: 40px;
+}
+
+.title-heading.sl {
+  flex-basis: 344px;
+  color: salmon;
+  font-size: 40px;
+}
+
+.title-heading.sl > strong {
+  box-shadow: inset 0 -20px 0 #fff;
+  font-weight: normal;
+}
+
+.title-heading strong {
+  box-shadow: inset 0 -20px 0 orangered;
+  font-weight: normal;
+}
+
+.title p::before {
+  content: ' ';
+  width: 60px;
+  height: 2px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  margin-right: 20px;
+}
+
+.title p {
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  color: #bd8fe8;
+  font-size: 14px;
+}
+
+.title button {
+  margin-left: auto;
+  padding: 20px 30px;
+  background-color: orangered;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: inset 0 -3px 0 #B23105;
+}
+/* //title */
+
+
+/* project */
+.project-card {
+  background-color: white;
+  color: #222;
+  margin-bottom: 24px;
+  display: flex;
+  min-height: 200px;
+}
+
+.project-card:last-child {
+  margin-bottom: 0;
+}
+
+/* .card + .card {
+  margin-top: 24px;
+}
+
+.card:not(:first-child) {
+  margin-top: 24px;
+} */
+
+.project-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.project-cover {
+  flex-basis: 26%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.project-cover img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-cover h2 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  z-index: 10;
+}
+
+.project-cover::after {
+  content: '';
+  background-color: #673399;
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+}
+
+.project-contents {
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 0;
+  padding: 24px;
+}
+
+.project-contents h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #673399;
+  padding-bottom: 32px;
+}
+/* //project  */
+
+/* event */
+.event-card {
+  flex-basis: 344px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  min-width: 0;
+}
+
+.event-contents h3 {
+  color: #222;
+  padding: 24px 24px 24px 0;
+  font-size: 24px;
+  font-weight: bold;
+  min-height: 50px;
+}
+
+.event-txt {
+  color: gray;
+  font-size: 14px;
+  min-height: 130px;
+  border-bottom: 3px solid #eee;
+}
+
+.event-tag span {
+  color: #673399;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #f1e0f8;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.event-contents {
+  padding: 24px 24px 0 24px;
+}
+
+.event-cover img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.event-cover {
+  position: relative;
+}
+
+.event-footer {
+  min-height: 64px;
+  color: gray;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* //event */
+
+.badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+
+.more-people img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.more-people img + img {
+  margin-left: -14px;
+}
+
+
+/* lists */
+.lists {
+  font-size: 14px;
+  padding-left: 13px;
+}
+
+.lists li {
+  text-indent: -20px;
+  padding: 7px;
+}
+
+.list li + li {
+  margin-top: 6px;
+}
+
+.lists li::before {
+  content: ' ';
+  background-color: #673399;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+  opacity: 0.6;
+}
+
+/* //lists */
