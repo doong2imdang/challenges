@@ -304,7 +304,7 @@ button {
 /* //lists */
 
 /* media */
-@media (max-width: 768px) {
+@media (max-width: 786px) {
   .title {
     width: 344px;
     display: block;
@@ -317,7 +317,7 @@ button {
   }
 }  
 
-@media (max-width:768px) {
+@media (max-width:786px) {
   .title p::before {
     display: none;
   }
