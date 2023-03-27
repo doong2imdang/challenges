@@ -32,12 +32,12 @@ button {
 }
 
 .l-wrapper {
-  width: 1080px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
 .section {
-  padding: 100px 0;
+  padding: 100px 10px;
 }
 
 .section-purple {
@@ -50,7 +50,6 @@ button {
   color: salmon;
 }
 
-
 .section-header {
   margin-bottom: 100px;
 }
@@ -59,6 +58,7 @@ button {
   display: flex;
   justify-content: center;
   gap: 24px;
+  min-width: 344px;
 }
 
 /* title */
@@ -69,14 +69,8 @@ button {
 
 
 .title-heading {
-  flex-basis: 26%;
-  flex-shrink: 0;
-  font-size: 40px;
-}
-
-.title-heading.sl {
   flex-basis: 344px;
-  color: salmon;
+  flex-shrink: 0;
   font-size: 40px;
 }
 
@@ -125,7 +119,7 @@ button {
   color: #222;
   margin-bottom: 24px;
   display: flex;
-  min-height: 200px;
+  /* min-height: 200px; */
 }
 
 .project-card:last-child {
@@ -151,7 +145,6 @@ button {
 }
 
 .project-cover img {
-  position: absolute;
   left: 0;
   right: 0;
   width: 100%;
@@ -207,14 +200,27 @@ button {
   padding: 24px 24px 24px 0;
   font-size: 24px;
   font-weight: bold;
-  min-height: 50px;
+  min-height: 57px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .event-txt {
   color: gray;
   font-size: 14px;
   min-height: 130px;
-  border-bottom: 3px solid #eee;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+.event-footer {
+  margin-top: 24px;
 }
 
 .event-tag span {
@@ -241,6 +247,7 @@ button {
 }
 
 .event-footer {
+  border-top: 3px solid #eee;
   min-height: 64px;
   color: gray;
   font-size: 12px;
@@ -294,5 +301,28 @@ button {
   margin-right: 10px;
   opacity: 0.6;
 }
-
 /* //lists */
+
+/* media */
+@media (max-width: 768px) {
+  .title {
+    width: 344px;
+    display: block;
+  }
+  .title-heading {
+    margin-bottom: 40px;
+  }
+  .section-contents.sl {
+    flex-direction: column;
+  }
+}  
+
+@media (max-width:768px) {
+  .title p::before {
+    display: none;
+  }
+  .project-card,
+  .project-card:nth-child(even) {
+    flex-direction: column;
+  }
+}
