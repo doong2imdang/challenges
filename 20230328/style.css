@@ -71,6 +71,7 @@ button {
 .title-heading {
   flex-basis: 344px;
   flex-shrink: 0;
+  flex-grow: 0;
   font-size: 40px;
 }
 
@@ -91,6 +92,7 @@ button {
   flex-shrink: 0;
   background-color: currentColor;
   margin-right: 20px;
+  margin-left: -65px;
 }
 
 .title p {
@@ -119,7 +121,7 @@ button {
   color: #222;
   margin-bottom: 24px;
   display: flex;
-  /* min-height: 200px; */
+  min-height: 200px;
 }
 
 .project-card:last-child {
@@ -304,7 +306,8 @@ button {
 /* //lists */
 
 /* media */
-@media (max-width: 786px) {
+@media (max-width:836px) {
+  /* event 반응형 */
   .title {
     width: 344px;
     display: block;
@@ -318,6 +321,7 @@ button {
 }  
 
 @media (max-width:786px) {
+  /* project 반응형 */
   .title p::before {
     display: none;
   }
@@ -326,3 +330,4 @@ button {
     flex-direction: column;
   }
 }
+/* //media */
