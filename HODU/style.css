@@ -1,0 +1,271 @@
+* { 
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+body, ul, li, h1, h2, h3, p, button, a, figure {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+ul, li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/* header */
+.header {
+  background: #F2E9D8;
+  padding: 31px 20px 0px 20px;
+}
+
+.section-header {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-lists {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.btn-common {
+  color: #fff;
+  background-color:#D97652;
+  padding: 15px 30px;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 40px;
+}
+
+.section-header2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 128px;
+}
+
+.header2-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+.header2-txt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 40px 0;
+}
+/* //header */
+
+/* main */
+main {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  padding-top: 80px;
+}
+
+.section1-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 45px;
+}
+
+.section1-txt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 30px; 
+}
+
+.card1 {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.section1-contents {
+  display: flex;
+  gap: 110px;
+  justify-content: center;
+  align-items: center;
+}
+
+.section2-contents {
+  text-align: center;
+}
+
+.section2-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  color: #D97652;
+  padding: 120px 0 40px 0;
+}
+
+.section2-txt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.section2-txt span {
+  color: #D97652;
+}
+
+.card-lists {
+  display: flex;
+  justify-content: center;
+  gap: 72px;
+  padding: 88px 0;
+}
+
+.card2,
+.card3,
+.card4 {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.main-section3 {
+  display: flex;
+  gap: 52px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 90px;
+}
+
+.section3-txt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.section4-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 143px;
+}
+
+.section4-contents {
+  background: #263140;
+  border-radius: 30px;
+  padding: 50px 58px;
+  max-width: 1280px;
+  margin: 0 auto -96px auto;
+  position: relative;
+}
+
+.section4-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 45px;
+  color: #fff;
+}
+
+.section4-txt {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color:#F2E9D8;
+}
+
+.input-email {
+  position: relative;
+}
+
+.icon-email {
+  position: absolute;
+  width: 24px;
+  top: 17px;
+  left: 25px;
+  color: #767676;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#user-email {
+  width: 530px;
+  padding: 20px 0 20px 68px;
+  border-radius: 60px;
+  border: 0;
+}
+
+.btn-common.subscribe {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+}
+
+.main-section4::after {
+  content: '';
+  background: url(img/img_5.svg) no-repeat center/cover;
+  height: 340px;
+  display: block;
+}
+
+.move-top {
+  position: absolute;
+  right: 24px;
+}
+/* //main */
+
+/* footer */
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.social-lists {
+  display: flex;
+  gap: 20px;
+}
