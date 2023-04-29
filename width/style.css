@@ -1,0 +1,40 @@
+.wrapper {
+  background-color: rgb(230, 230, 230);
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.max,
+.min,
+.width  {
+  height: 200px;
+  margin: auto;
+  font-weight: bold;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.max {
+  background-color: rgb(255, 206, 214);
+  max-width: 500px;
+}
+
+.width {
+  background-color: rgb(212, 212, 212);
+  width: 600px;
+}
+
+.min{
+  background-color: rgb(192, 237, 255);
+  min-width: 500px;
+}

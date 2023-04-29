@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max-width/min-width</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Max-width : 1024px</h1>
+  <div class="wrapper">
+    <div class="size max">max-width</div>
+    <div class="size width">width</div>
+    <div class="size min">min-width</div>
+  </div>
+
+  <script>
+const divs = document.querySelectorAll('.size');
+
+divs.forEach((div) => {
+  const p = document.createElement('p');
+  div.appendChild(p);
+
+  function updateWidth() {
+    p.textContent = `현재 너비값은 ${div.clientWidth}px`;
+  }
+
+  window.addEventListener("resize", () => {
+    updateWidth();
+  });
+  updateWidth();
+});
+  </script>
+</body>
+</html>

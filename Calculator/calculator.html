@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="calc">
+      <div class="display-container">
+        <!-- 계산 과정창 -->
+        <div class="display-1">0</div>
+        <!-- 입력창(결과창) -->
+        <div class="display-2">0</div>
+        <!-- 계산 임시결과창 -->
+        <div class="temp-result">0</div>
+      </div>
+      <button class="button all-clear">AC</button>
+      <button class="button operation">&#177</button>
+      <button class="button operation">%</button>
+      <button class="button operation">&#247</button>
+      <button class="button number">7</button>
+      <button class="button number">8</button>
+      <button class="button number">9</button>
+      <button class="button operation">&#215</button>
+      <button class="button number">4</button>
+      <button class="button number">5</button>
+      <button class="button number">6</button>
+      <button class="button operation">&#8722</button>
+      <button class="button number">1</button>
+      <button class="button number">2</button>
+      <button class="button number">3</button>
+      <button class="button operation">+</button>
+      <button class="button number">0</button>
+      <button class="button number">.</button>
+      <button class="button equal">=</button>
+    </div>
+  </div>
+  <!-- 유니코드 
+  +/-(plus/Minus symbol) : &#177;
+  /(division) : &#247;
+  X(multiplication symbol) : &#215
+  ㅡ(minus symbol) : &#8722 -->
+  <script src="cal.js"></script>
+</body>
+</html>
