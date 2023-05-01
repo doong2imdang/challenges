@@ -1,6 +1,6 @@
 ///// DOM
-const display1El = document.querySelector(".display-1");
-const display2El = document.querySelector(".display-2");
+const display1El = document.querySelector(".display1");
+const display2El = document.querySelector(".display2");
 const tempResultEl = document.querySelector(".temp-result");
 const numbersEl = document.querySelectorAll(".number");
 const operationEl = document.querySelectorAll(".operation");
@@ -12,15 +12,15 @@ const plusMinusEl = document.querySelector(".plusminus")
 ///// Variables
 
 // 출력할 값을 담을 변수
-let display1Num =  "";
-let display2Num = "";
-let result = null;
+let display1Num =  "";   // 첫번째 입력값
+let display2Num = "";    // 두번째 입력값
+let result = null;       // 계산된 결과값
 
-// 기호를 담을 변수
+// 연산자를 담을 변수(마지막에 입력된 연산자를 저장하는 변수)
 let lastOperation = "";
 
-// .중복 체크를 위한 변수
-let haveDot = false;
+// .(소수점)의 중복 입력을 방지하기 위한 변수
+let dotNum = false;
 
 
 
@@ -30,12 +30,14 @@ let haveDot = false;
 numbersEl.forEach(number => {
   number.addEventListener("click", (e) => {
     // .의 중복 체크 부분
-    if(e.target.innerText === "." && !haveDot) {
-      haveDot = true;
-    } else if(e.target.innerText === "." && haveDot) {
-      return;
+    // 만약 클릭한 버튼이 소수점이면
+    if(e.target.innerText === "." && !dotNum) {
+      dotNum = true;   // true로 변경
+      // (.)소수점이 다시 입력되면 더이상 소수점 입력X
+    } else if(e.target.innerText === "." && dotNum) {
+      return;  // 함수 실행 종료
     }
-    // 클릭한 숫자값 변수에 넣고 변수 값을 출력하는 부분
+    // 클릭된 숫자값을 변수에 넣고 변수 값을 출력하는 부분
     if(display2Num !== "0") {
       display2Num += e.target.innerText;
     } else {
@@ -48,15 +50,15 @@ numbersEl.forEach(number => {
 // operation click event
 operationEl.forEach(operation => {
   operation.addEventListener("click", (e) => {
-    // 기호 앞에 아무값도 없을 경우 아무것도 실행할 수 없음
+    // 연산자 앞에 아무값도 없을 경우 아무것도 실행할 수 없음
     if(!display2Num) {
       return;
     }
-    // 기호 다음 두번째 값은 .을 다시 사용할 수 있어야 함
-    haveDot = false;
-    // 클릭한 기호를 변수에 넣음
+    // 연산자 다음 두번째 값은 .을 다시 사용할 수 있어야 함
+    dotNum = false;
+    // 클릭한 연산자를 변수에 넣음
     const operationSymbol = e.target.innerText;
-    // 첫번째 값과 두번째 값 그리고 기호기 모두 있을 때
+    // 첫번째 값과 두번째 값 그리고 연산자기 모두 있을 때
     if(display1Num && display2Num && lastOperation) {
       // 계산 실행
       mathOperation();
@@ -73,22 +75,24 @@ operationEl.forEach(operation => {
       return;
     }
 
-    clearVar(operationSymbol);
+    clearPreviousValue(operationSymbol);
     lastOperation = operationSymbol;
   });
 });
 
-// 첫번쨰 입력 숫자와 기호를 합쳐 출력하는 함수 및 임시 결과창에 값 출력
-function clearVar(symbol = "") {
-  display1Num += `${display2Num} ${symbol}`;
+// 현재 값을 지우고 이전 값과 연산자를 표시하는 역할 
+function clearPreviousValue(prefix) {
+  prefix = prefix || "";
+  display1Num += `${display2Num} ${prefix}`;
   display1El.innerText = display1Num;
   display2El.innerText = "";
-  display2Num = "";
+  display2Num = ""; // 초기화 안해주면 3 - 33- 333 이런식으로 됨
   // 임시 결과창에 저장한 값 출력
   tempResultEl.innerText = result;
 }
 
-// 모든 값이 있을 경우 각 기호별로 계산 및 임시 결과창에 계산 결과 출력
+// 모든 값이 있을 경우 각 연산자별로 계산 및 임시 결과창에 계산 결과 출력 
+// parseFloat(문자열 => 실수)
 function mathOperation() {
   if(lastOperation === "×") {
       result = parseFloat(result) * parseFloat(display2Num);
@@ -98,8 +102,6 @@ function mathOperation() {
       result = parseFloat(result) - parseFloat(display2Num);
   } else if(lastOperation === "÷") {
       result = parseFloat(result) / parseFloat(display2Num);
-  } else if(lastOperation === "%") {
-      result = parseFloat(result) % parseFloat(display2Num);
   }
 }
 
@@ -123,29 +125,29 @@ plusMinusEl.addEventListener("click", () => {
 
 // equalEl click event
 equalEl.addEventListener("click", (e) => {
-  // 첫번째 값 혹은 두번째 값이 없을 경우는 계산 불가하여 아무것도 하지 않음
+  // 첫번째 값 혹은 두번째 값이 없을 경우는 계산하지 않음
   if(!display1Num || !display2Num) {
     return;
   }
   // 둘다 값이 있을 경우
-  haveDot = false;
+  dotNum = false;
   mathOperation();
-  clearVar();
+  clearPreviousValue();
   display2El.innerText = result;
   tempResultEl.innerText = "";
   display2Num = result;
   display1Num = "";
 });
 
-// all clear(AC) click event
+// clearAll(AC) click event
 clearAllEl.addEventListener("click", (e) => {
   // 모든 값 초기화
+  dotNum = false;
   display1El.innerText = "0";
   display2El.innerText = "0";
   display1Num = "";
   display2Num = "";
   result = "";
   tempResultEl.innerText = "0";
-  haveDot = false;
 });
 
